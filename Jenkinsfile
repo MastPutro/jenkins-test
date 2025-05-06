@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'frontend-jenkins'
+        DOCKER_IMAGE = 'laravel-app'
     }
 
     stages {
-        stage('Clone') {
+        stage('Clone Repo') {
             steps {
                 git 'https://github.com/MastPutro/jenkins-test.git'
             }
@@ -18,9 +18,9 @@ pipeline {
             }
         }
 
-        stage('Run Container') {
+        stage('Run Docker Container') {
             steps {
-                sh 'docker run -d -p 8000:8000 $DOCKER_IMAGE'
+                sh 'docker run -d -p 8000:8000 --name laravel-container $DOCKER_IMAGE'
             }
         }
     }
