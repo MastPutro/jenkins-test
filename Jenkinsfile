@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'nama_image_laravel'
+        DOCKER_IMAGE = 'frontend-jenkins'
     }
 
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/kamu/laravel-project.git'
+                git 'https://github.com/MastPutro/jenkins-test.git'
             }
         }
 
