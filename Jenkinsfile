@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/MastPutro/jenkins-test.git'
+                git branch: 'main', url: 'https://github.com/MastPutro/jenkins-test.git'
             }
         }
 
